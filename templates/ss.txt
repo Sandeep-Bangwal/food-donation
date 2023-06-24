@@ -1,0 +1,17 @@
+        <td><img src="/media/{{order.food_id.image}} " width="40px" height="40px"></td>
+         <td>{{order.order_id}}</td>
+         <td>{{order.food_id.food_title}}</td>
+         <td>{{order.user_id}}</td>
+         <td>{{order.food_id.packets}}</td>
+         <td>{{order.date}}</td>
+         <td>{{order.status}}</td>
+         </tr>
+
+
+
+            # display the doner orders form the ngo  
+    # order = food_list.objects.filter(user_post_id= request.session['user'])\
+    #            .select_related('order_list')\
+    #            .select_related('users')\
+    #            .filter(order_list__status='waiting')\
+    #            .values('food_id','food_title','packets', 'image','order_list__user_id', 'order_list__order_id', 'order_list__date', 'order_list__users__sno')

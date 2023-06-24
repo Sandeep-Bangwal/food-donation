@@ -1,0 +1,64 @@
+*{
+    margin: 0%;
+    padding:0%
+}
+
+.navbar{
+    display: flex;
+    height: 10vh;
+    width:100%;
+    background-color: white;
+    /* background-color: #8a0672; */
+    justify-content: flex-end;
+    align-items: center;
+    /* box-shadow: ; */
+   
+}
+
+.logo{
+    margin-right: auto;
+    color: #8a0672;
+    font-size: 18px;
+    font-weight: 700;
+}
+
+.logo h3{
+    padding: 9px 35px;
+    font-size: 20px;
+    font-style: normal;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: 700;
+    color: #8a0672;
+}
+
+.nav-manu ul li{
+    display: inline-block;
+    color: #410335;
+}
+
+.navbar .nav-manu ul li{
+    list-style: none;
+    padding: 9px 35px;
+    font-size: 20px;
+    font-style: normal;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    cursor: pointer;
+   
+}
+
+.navbar .nav-manu ul li a{
+    text-decoration: none;
+     color: #8a0672;
+     font-weight: 700;
+     
+}
+
+.navbar .nav-manu ul li a:hover{
+    
+    color: #410335;
+    cursor: pointer;
+    text-decoration: underline;
+
+    
+ 
+}

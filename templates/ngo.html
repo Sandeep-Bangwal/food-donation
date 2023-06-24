@@ -1,0 +1,25 @@
+{% extends 'navbaar.html' %}
+
+{% block title %}NGO{% endblock title%}
+
+{% block body %}
+<div class="box">
+    {% for p in food_items %}
+    <div class="item">
+      <img src="/media/{{p.image}}" alt="">
+      <h2>{{p.food_title}}</h2>
+      <span>{{p.Rst_name}}</span><br>
+      <b></b>
+
+      <span><b>Packets</b>  {{p.packets}}</span><br>
+      <span><b>Loaction</b> {{p.location}}</span>
+      <div class="box-footar"> 
+        <a href="">ODER </a>      
+        <a href="{% url 'view_food' p.food_id %}">QUICK VIEW</a>
+      </div>
+      </div>
+      {% endfor %}
+  </div>
+{% endblock body %}
+
+

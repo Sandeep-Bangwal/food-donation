@@ -1,0 +1,102 @@
+{% extends 'navbaar.html' %}
+
+{% block title %}Orders{% endblock title%}
+{% block CSS %} 
+<style>
+  .order{
+    border: 2px solid #8a0672;
+    width: 900px;
+    padding: 2px 10px;
+    height: 13vh;
+    position: relative;
+    left: 13%;
+    margin: 8px 0px;
+  }
+
+  .order-head{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .order_body{
+    margin: 4px 0px;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+  }
+</style>
+
+<link rel="stylesheet" href="/static/css/btn-2.css">
+{% endblock%} 
+{% block body %}
+<div>
+
+</div>
+
+<div>
+  {% if message %}
+  <p>{{ message }}</p>
+  {% else %}
+  {% if request.session.user_Is_doner == 'Doner' %}
+  <table class="content-table">
+    <thead>
+    <tr>
+      <th>Images</th>
+      <th>Order Id</th>
+      <th>Food Title</th>
+      <th>Orgnazation Name</th>
+      <td>packets</td>
+      <th>Order Date</th>
+      <th>Status</th>
+      <th>Action</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+         {% for orders in order %}
+         <td><img src="/media/{{orders.food_id__image}} " width="40px" height="40px"></td>
+         <td>{{orders.order_id }}</td>
+         <td>{{orders.food_id__food_title}}</td>
+         <td>{{orders.user_name}}</td>
+         <td>{{orders.food_id__packets}}</td>
+         <td>{{orders.date}}</td>
+         <td>
+          <label>Status</label>
+          <form action="update_orders/{{orders.order_id }}/" method="POST">
+            {% csrf_token %}
+          <select name="status">
+            <option  value="Accept">Accept</option>
+            <option  value="packed">packed</option>
+            <option  value="Deliverd">Deliverd</option>
+          </select>
+         </td>
+         <td>
+           <button type="submit">Submit</button>  
+        </td>
+        </form>
+         </tr>
+        
+         {% endfor %}
+      {% else %} 
+         {% for order in orders %}
+         <div class="order">
+          <div class="order-head">
+              <span id="order_id">Order ID #{{order.order_id}} {{order.date}}</span>
+              <span>{{order.status}}</span>
+          </div>
+          <div class="order_body">
+                  <img src="/media/{{order.food_id.image}} " height="50px" width="50px">
+                  <div style="margin-left: 10px;">
+                      <p>{{order.food_id.food_title}}</p>
+                  </div>
+          </div>
+      </div>
+         {% endfor %}
+      {% endif %}
+    </tbody>
+  </table>
+</div>
+  {% endif %}
+
+{% endblock body %}

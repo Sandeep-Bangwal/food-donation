@@ -1,0 +1,74 @@
+
+.box {
+    display: grid;
+    grid-template-columns: repeat(4, 250px);
+     margin: 30px 0; 
+    grid-gap: 10px;
+    position: absolute;
+    left: 10%
+
+}
+
+.box .item {
+    border: 2px #8a0672 solid;
+    border-radius: 4px;
+}
+
+.item span {
+    font-size: 15px;
+}
+
+.box .item img {
+    width: 200px;
+    height: 188px;
+    /* padding-top:30px; */
+}
+
+.box .item {
+    padding: 10px 22px;
+}
+
+.item .box-footar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.item .box-footar a {
+    text-decoration: none;
+    color: #8a0672;
+    font-weight: 900;
+}
+
+/* Hear is css for foodPost_view page  */
+
+.container {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    margin: 30px 20px;
+    grid-gap: 10px;
+
+}
+
+table{
+    margin: 10px 30px;
+}
+
+#items h1{
+    font-size: 40px;
+}
+
+#items span{
+    font-size: 20px;
+}
+table,th,td{
+    border: 1px solid black; 
+    border-collapse: collapse;
+}
+
+th,td {
+    padding: 5px;
+    text-align: left;
+    height: 30px;
+}

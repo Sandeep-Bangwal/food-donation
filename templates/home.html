@@ -1,0 +1,70 @@
+{% extends 'navbaar.html' %}
+
+{% block title %}Home{% endblock title%}
+
+{% block CSS %} 
+<link rel="stylesheet" href="/static/css/footer.css">
+{% endblock%}
+
+{% block body %}
+
+<!-- banner -->
+<div class="containers" style="background-color: #8a0672;">
+  <div class="banner">
+     <h1>Are You Donating Food?</h1>
+  <h2>This is used to manage wastage foods in a useful way.<br> Every day the 
+     people are wasting lots of foods. So <br>
+     we have to reduce that food wastage <br>
+      problem through online</h2>
+    
+      <a href="/accounts/login"><input type="submit-1" value="DONATE NOW"></a>
+  </div>
+ 
+  <div class="banner">
+    <img src="/static/images/benner-1.jpg" width="410px" height="210px">
+  </div>   
+</div>
+
+<h1 style="text-align: center; margin-top: 15px;">How Does It Work</h1>
+<div class="session">
+    <div class="info">
+        <div class="info-1">
+          <img src="/static/images/R.png" width="100" height="100"> 
+          <h3>Donet <br> Food</h3>
+        </div>
+        <div class="line"></div>
+        <div class="info-1">
+          <img src="/static/images/R (1).png" width="50" height="60" > 
+          <h3>Select <br> Location</h3>
+          
+        </div>
+        <div class="line"></div>
+        <div class="info-1">
+          <img src="/static/images/order.jpg" width="70" height="70" > 
+          <h3>OrderFood</h3>
+        </div>
+    </div>
+</div>
+
+
+<div class="box">
+  {% for p in food_items %}
+  <div class="item">
+    <img src="/media/{{p.image}}" alt="">
+    <h2>{{p.food_title}}</h2>
+    <span>{{p.Rst_name}}</span><br>
+    <b></b>
+
+    <span><b>Packets</b>  {{p.packets}}</span><br>
+    <span><b>Loaction</b> {{p.location}}</span>
+    <div class="box-footar"> 
+      <a href="">ODER </a>      
+      <a href="{% url 'view_food' p.food_id %}">QUICK VIEW</a>
+    </div>
+  </div>
+    {% endfor %}
+</div>
+
+
+
+{% endblock body %}

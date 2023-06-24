@@ -1,0 +1,137 @@
+* {
+    margin: 0;
+    padding: 0;
+  }
+
+  /* banner */
+.containers{
+    display: flex;
+    justify-content: flex-start;
+  }
+  
+ .banner h1{
+    color: white;
+  }
+  
+  .containers .banner{
+    position: relative;
+    left: 10%;
+    margin: 10px;
+    color: #f98ae5;
+    /* font-weight: bold; */
+  }
+
+  input[type="submit-1"]:hover{
+    border-color:#410335;
+    transition: .5s;
+  }
+
+input[type="submit-1"]{
+  text-align: center;
+  margin: 10px 0;
+  width: 100%;
+  height: 50px;
+  border: none;
+  background:#a3338c;
+  border-radius: 15px;
+  font-size: 18px;
+  color: white;
+  font-weight: 700;
+  cursor: pointer;
+  outline: none;
+}
+
+
+/* after banner information sessions */
+
+.session{
+  margin: 20px 100px;
+
+}
+
+.session .info{
+  display: flex;
+  padding: 10px 50px;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.session .info-1{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+ 
+}
+
+.session .info-1 h3{
+   margin-left: 10px;
+   font-size: 24px;
+}
+
+ .line{
+  width: 3px;
+  height: 80px;
+  background-color: black;
+}
+
+
+
+/* start footer */
+footer {
+  background: #8a0672;
+  padding: 12px 10px;
+  /* height: 50vh; */
+  /* width: 100%; */
+}
+
+.content{
+  text-align: center;
+  font-size: 18px;
+  color: wheat;
+}
+
+.footar ul{
+  display: flex;
+  justify-content: space-around;
+  color: white;
+  margin-top: 40px;
+
+}
+
+.footar ul {
+  margin: 10px 20px;
+  color: white;
+  list-style: none;
+
+
+}
+
+.footer ul li {
+  color: white;
+  margin: 5px 0px;
+  font-size: 24px;
+
+}
+/* 
+.footar h5 {
+  color: white;
+  padding: 10px
+}
+
+.footar .f4 img {
+  width: 40px;
+  height: 40px;
+  padding: 8px;
+}
+*/
+
+.bottum h3 {
+  margin: 5px;
+  text-align: center;
+  color: white;
+}
+
+
+
+
+

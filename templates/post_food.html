@@ -1,0 +1,70 @@
+{% extends 'navbaar.html' %}
+
+{% block title %}Doner-post{% endblock title%}
+
+<!-- css files -->
+{% block CSS %}
+<link rel="stylesheet" href="/static/css/postFood.css">
+{% endblock CSS%}
+
+
+<!-- Start body tag html -->
+{% block body %}
+
+
+<div class="Food-box">
+  <h1>MAKE A FOOD DONATION</h1>
+  <form action="/post_food/post" method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    {% if error %}
+    {{error}}
+    {% endif%}
+    <div class="input_txt">
+      <label>Restaurant Name</label>
+      <br>
+      <input type="text" name="Restaurant_Name" required>
+    </div>
+    <input type="hidden" name="id" value="{{request.session.user}}">
+    <div class="input_txt">
+      <label>Food Title</label>
+      <br>
+      <input type="text" name="title" required>
+    </div>
+
+    <br>
+    <div class="input_txt">
+      <label>Restaurant Loaction</label>
+      <br>
+      <input type="text" name="rst_Loaction" required>
+    </div>
+    <br>
+
+    <div class="input_txt">
+      <label>Packets</label>
+      <br>
+      <input type="text" name="Packets" required>
+    </div>
+    <div class="input_txt">
+      <label for="appt">Choose a time for Cocking:</label>
+      <input type="time" id="appt" name="Cock_time" min="09:00" max="18:00" required>
+    </div>
+    <div class="input_txt">
+    <label for="birthday">Date of Cocking</label>
+     <input type="date" id="date" name="date">
+    </div>
+    <br>
+    <div class="input_txt">
+      <label>Images</label>
+      <input type="file" name="img" required>
+    </div>
+
+    <br>
+    <input type="submit" value="Donet">
+  </form>
+</div>
+
+
+
+
+
+{% endblock body %}

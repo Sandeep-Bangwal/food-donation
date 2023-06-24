@@ -1,0 +1,70 @@
+{% extends 'navbaar.html' %}
+
+{% block title %}Doner{% endblock title%}
+{% block CSS %}
+<link rel="stylesheet" href="/static/css/button.css">
+
+{% endblock CSS%}
+
+{% block body %}
+
+<div class="container">
+    {% for p in view_foods %}
+    <div class="container-items">
+        <img src="/media/{{p.image}} " width="390px" height="390px">
+    </div>
+    <div class="container-items" id="items">
+        <h1>{{p.food_title}}</h1>
+        <span>{{p.Rst_name}}</span>
+        <table style="width:45%">
+            <tr>
+                <th>Category</th>
+                <td>{{p.location}}</td>
+            </tr>
+            <tr>
+                <th>Food Title</th>
+                <td>{{p.food_title}}</td>
+            </tr>
+            <tr>
+                <th>Packets</th>
+                <td>{{p.packets}}</td>
+            </tr>
+            <tr>
+                <th>Coking Time</th>
+                <td>{{p.time}}</td>
+            </tr>
+            <tr>
+                <th>Coking Date</th>
+                <td>{{p.date}}</td>
+            </tr>
+            <tr>
+                <th>Restaurant Name</th>
+                <td>{{p.Rst_name}}</td>
+            </tr>
+            <tr>
+                <th>Location</th>
+                <td>{{p.location}}</td>
+            </tr>
+            <tr>
+                <th>Post Date</th>
+                <td>{{p.location}}</td>
+            </tr>
+      
+        </table>
+    </div>
+    <div class="container-items">
+        {% if chek_user %}
+        <input type="submit-1" value="UPDATE">
+        {% else %}
+        <form action="/post_food/order" method="post">
+        {% csrf_token %}
+        <input type="hidden" name="food_id" value="{{p.food_id}}">
+        <button >Order</button>
+       </form>
+        
+        {% endif %}
+    </div>
+    {% endfor %}
+</div>
+
+{% endblock body %}

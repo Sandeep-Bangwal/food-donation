@@ -1,0 +1,42 @@
+{% extends 'navbaar.html' %}
+
+{% block title %}Admin{% endblock title%}
+{% block CSS %}
+<link rel="stylesheet" href="/static/css/btn-2.css">
+
+{% endblock CSS%}
+
+{% block body %}
+
+<div>
+  <table class="content-table">
+    <thead>
+      <tr>
+        <th>User Id</th>
+        <th>Account type</th>
+        <th>Email</th>
+        <th>Orgnazation Name</th>
+        <th>Address</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        {% for user in lists %}
+
+        <td>{{user.sno}}</td>
+        <td>{{user.account}}</td>
+        <td>{{user.email}}</td>
+        <td>{{user.name}}</td>
+        <td>{{user.Address}}</td>
+        <td>
+          <a href="{% url 'approve_user' user.sno %}"><button>Approve</button></a>
+        </td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+</div>
+
+
+{% endblock body %}
